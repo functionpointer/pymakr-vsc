@@ -247,17 +247,6 @@ export default class Pyboard {
       }
       _this.type = _this.connection.type
 
-      if (_this.connection.type == 'telnet') {
-        _this.authorize.run(function(error){
-          if(error){
-            _this._disconnected()
-            callback(error)
-          }else{
-            _this._onconnect(callback)
-          }
-        })
-      }
-
       _this.connection.connect(function(){
           _this.connection.registerListener(function(mssg,raw){
             _this.receive(mssg,raw)
