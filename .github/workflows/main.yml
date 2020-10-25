@@ -1,15 +1,6 @@
 name: Build Pymakr
 
-on:
-  pull_request: ~
-  push:
-    branches-ignore:
-      - "dependabot/**"
-    paths-ignore:
-      - "doc/**"
-  schedule:
-    # Run everyday at 1am
-    - cron: "30 20 * * *"
+on: [workflow_dispatch]
 
 jobs:
   build:
